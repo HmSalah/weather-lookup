@@ -1,8 +1,3 @@
-# Hamza Salah
-# Week 12
-# Programming Assignment: Weather Lookup Program
-# 3/2/2024
-
 """
 This program allows users to look up weather information by ZIP code or city.
 
