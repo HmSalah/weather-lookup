@@ -48,3 +48,6 @@
          *	process_response (tuple or str): Processed weather information.
          *	unit_response (tuple or str): Unit abbreviation and speed unit.
   -----------------------------------------------------------------------------------
+  ##	<div align="center"> Weather Lookup in action! </div>
+  ![image](https://github.com/HmSalah/weather-lookup/assets/74623220/325404f3-8b5a-479a-b67b-1aab5b24ea59)
+
