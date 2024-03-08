@@ -11,9 +11,9 @@ Requirements:
 
 Usage:
     1. Run the program.
-    2. Follow the prompts to select the search method (ZIP code or city),
+    2. Follow the prompts to select the search method (ZIP code or city).
     3. Enter the location information.
-    4. Choose the unit of measurement (Metric, Imperial, Kelvin),
+    4. Choose the unit of measurement (Metric, Imperial, Kelvin).
     5. The program will fetch the weather data and display it to the user.
 
 Functions:
@@ -36,6 +36,11 @@ Functions:
        Parameters:
            - geo_response (tuple or str): Tuple containing city name, latitude,
            and longitude.
+
+           - unit_input (str): Unit of measurement for temperature. Possible values:
+                - 'metric' for Celsius
+                - 'imperial' for Fahrenheit
+                - 'standard' for Kelvin
 
     - weather_processing: Processes weather data to extract relevant
     information.
@@ -152,13 +157,17 @@ def get_geocodes(parsed_response):
         return geo_response
 
 
-def get_weather(geo_response):
+def get_weather(geo_response, unit_input):
     """
     Get weather data based on geocodes.
 
     Args:
         geo_response (tuple or str): Tuple containing city name, latitude,
         and longitude.
+        unit_input (str): Unit of measurement for temperature. Possible values:
+            - 'metric' for Celsius
+            - 'imperial' for Fahrenheit
+            - 'standard' for Kelvin
 
     Returns:
         dict or str: Dictionary containing weather information if successful,
@@ -176,7 +185,7 @@ def get_weather(geo_response):
         try:
             url = (f"https://api.openweathermap.org/data/2.5/weather?lat="
                    f"{latitude}&lon={longitude}&appid=01d9a6107a99b19399c956"
-                   f"dfb1e15d30&units=Metric")
+                   f"dfb1e15d30&units={unit_input}")
             response = requests.request("GET", url)
             weather_response = response.json()
             weather_response['name']
@@ -361,11 +370,11 @@ def main():
                                   f"connection to the server, There was a "
                                   f"connection error.")
                             continue
-                        weather = get_weather(get_geo)
+                        weather = get_weather(get_geo, unit_inp)
                         weather_fix = weather_processing(weather)
                         units = get_abbreviation(unit_inp)
                         time = datetime.now()
-                        current_time = time.strftime("%H:%M")
+                        current_time = time.strftime("%H:%M %p")
                         day = time.strftime('%A')
                         if get_geo == 'error':
                             print('error')
