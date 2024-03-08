@@ -1,8 +1,7 @@
 ###	<div align="center"> DSC 510 Programming - Bellevue University </div>
 #	<div align="center"> Weather Lookup Program </div>
 
-
-### This program allows users to look up weather information by ZIP code or city, It utilizes the OpenWeatherMap API to retrieve geolocation and weather data.
+### <div align="center"> This program allows users to look up weather information by ZIP code or city, It utilizes the OpenWeatherMap API to retrieve geolocation and weather data. </div>
 -----------------------------------------------------------------------------------
 
 **1.  Requirements:**
