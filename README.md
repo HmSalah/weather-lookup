@@ -1,6 +1,5 @@
------------------------------------------------------------------------------------
-
-#  Python Weather Lookup Program
+# Author: Hamza Salah
+# Python Weather Lookup Program
 
 ### This program allows users to look up weather information by ZIP code or city, It utilizes the OpenWeatherMap API to retrieve geolocation and weather data.
 -----------------------------------------------------------------------------------
