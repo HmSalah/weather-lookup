@@ -6,6 +6,7 @@
 
 **1.  Requirements:**
    *	Python 3.x
+   *	[main.py](main.py) file
    *	requests library
    *	colorama library
    *	datatime module
